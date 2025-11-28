@@ -1,0 +1,7 @@
+{
+  "extends": "@closetcutie/tsconfig/node",
+  "compilerOptions": {
+    "baseUrl": "."
+  },
+  "include": ["**/*.ts", "**/*.d.ts", "**/*.mts"]
+}

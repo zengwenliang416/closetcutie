@@ -4,7 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "node server.mjs"
+    "start": "node server.mjs",
+    "type-check": "tsc --noEmit",
+    "check-types": "pnpm run type-check"
   },
   "dependencies": {
     "@google/genai": "^1.30.0"
