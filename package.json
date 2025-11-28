@@ -1,0 +1,23 @@
+{
+  "name": "closetcutie-monorepo",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "clean": "rm -rf node_modules **/*/node_modules",
+    "web:dev": "npm --prefix apps/web run dev",
+    "uni:dev": "npm --prefix apps/uni run dev:h5",
+    "api:dev": "npm --prefix apps/api run start"
+  },
+  "devDependencies": {
+    "turbo": "^1.12.4",
+    "typescript": "^5.4.2"
+  }
+}

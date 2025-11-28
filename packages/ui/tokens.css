@@ -1,0 +1,26 @@
+:root {
+  --font-family: 'Fredoka', sans-serif;
+  --bg-blush: #fff0f5;
+  --scroll-track: #ffe4e1;
+  --scroll-thumb: #ffb6c1;
+  --radius-3xl: 1.5rem;
+  --shadow-soft: 0px 5px 0px rgba(0,0,0,0.15);
+  --shadow-card: 4px 4px 0px rgba(0,0,0,0.1);
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-blush);
+}
+
+::-webkit-scrollbar { width: 12px; }
+::-webkit-scrollbar-track { background: var(--scroll-track); }
+::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-thumb);
+  border-radius: 20px;
+  border: 3px solid var(--scroll-track);
+}
+
+.cartoon-shadow { box-shadow: var(--shadow-card); }
+.cartoon-button { transition: all 0.1s ease; box-shadow: var(--shadow-soft); }
+.cartoon-button:active { transform: translateY(5px); box-shadow: 0 0 0 rgba(0,0,0,0.15); }
