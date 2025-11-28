@@ -9,6 +9,7 @@
     "dev": "pnpm turbo run dev",
     "lint": "pnpm turbo run lint",
     "clean": "rm -rf node_modules **/*/node_modules",
+    "type-check": "pnpm turbo run check-types",
     "web:dev": "pnpm --filter closetcutie-web dev",
     "uni:dev": "pnpm --filter closetcutie-uni dev:h5",
     "api:dev": "pnpm --filter closetcutie-api start"
