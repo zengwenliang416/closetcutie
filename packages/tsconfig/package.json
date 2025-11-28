@@ -1,0 +1,17 @@
+{
+  "name": "@closetcutie/tsconfig",
+  "version": "0.0.0",
+  "private": true,
+  "files": [
+    "base.json",
+    "react.json",
+    "vue.json",
+    "node.json"
+  ],
+  "exports": {
+    "./base": "./base.json",
+    "./react": "./react.json",
+    "./vue": "./vue.json",
+    "./node": "./node.json"
+  }
+}
