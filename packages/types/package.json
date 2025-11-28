@@ -4,6 +4,10 @@
   "version": "0.0.0",
   "main": "./index.ts",
   "types": "./index.ts",
+  "scripts": {
+    "type-check": "tsc --noEmit",
+    "check-types": "pnpm run type-check"
+  },
   "exports": {
     ".": "./index.ts"
   }

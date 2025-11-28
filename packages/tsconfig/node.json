@@ -5,7 +5,7 @@
     "lib": ["ES2022"],
     "types": ["node"],
     "moduleResolution": "node16",
-    "module": "ESNext",
+    "module": "Node16",
     "target": "ES2022"
   },
   "include": ["**/*.ts", "**/*.tsx", "**/*.mts", "**/*.cts"]

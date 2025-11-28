@@ -2,6 +2,8 @@
   "extends": "@closetcutie/tsconfig/node",
   "compilerOptions": {
     "baseUrl": ".",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
     "paths": {
       "@types": ["../types"],
       "@types/*": ["../types/*"]
