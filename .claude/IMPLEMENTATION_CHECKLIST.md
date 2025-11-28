@@ -20,54 +20,54 @@
 
 ### 任务清单
 
-- [ ] **0.1** 全局安装 pnpm
+- [x] **0.1** 全局安装 pnpm - @codex 2025-11-28
   ```bash
   corepack enable
   corepack prepare pnpm@9.15.0 --activate
   ```
 
-- [ ] **0.2** 创建 `pnpm-workspace.yaml`
+- [x] **0.2** 创建 `pnpm-workspace.yaml` - @codex 2025-11-28
   ```yaml
   packages:
     - 'apps/*'
     - 'packages/*'
   ```
 
-- [ ] **0.3** 创建 `.npmrc`
+- [x] **0.3** 创建 `.npmrc` - @codex 2025-11-28
   ```ini
   shamefully-hoist=true
   strict-peer-dependencies=false
   auto-install-peers=true
   ```
 
-- [ ] **0.4** 更新根目录 `package.json`
-  - [ ] 移除 `workspaces` 字段
-  - [ ] 添加 `"packageManager": "pnpm@9.15.0"`
-  - [ ] 更新脚本为 pnpm 命令
+- [x] **0.4** 更新根目录 `package.json` - @codex 2025-11-28
+  - [x] 移除 `workspaces` 字段 - @codex 2025-11-28
+  - [x] 添加 `"packageManager": "pnpm@9.15.0"` - @codex 2025-11-28
+  - [x] 更新脚本为 pnpm 命令 - @codex 2025-11-28
 
-- [ ] **0.5** 更新 `apps/web/package.json` 依赖
-  - [ ] `closetcutie-services` → `@closetcutie/services: "workspace:*"`
-  - [ ] `closetcutie-types` → `@closetcutie/types: "workspace:*"`
-  - [ ] `closetcutie-ui` → `@closetcutie/ui: "workspace:*"`
+- [x] **0.5** 更新 `apps/web/package.json` 依赖 - @codex 2025-11-28
+  - [x] `closetcutie-services` → `@closetcutie/services: "workspace:*"` - @codex 2025-11-28
+  - [x] `closetcutie-types` → `@closetcutie/types: "workspace:*"` - @codex 2025-11-28
+  - [x] `closetcutie-ui` → `@closetcutie/ui: "workspace:*"` - @codex 2025-11-28
 
-- [ ] **0.6** 更新 `apps/uni/package.json` 依赖
-  - [ ] `closetcutie-services` → `@closetcutie/services: "workspace:*"`
-  - [ ] `closetcutie-types` → `@closetcutie/types: "workspace:*"`
+- [x] **0.6** 更新 `apps/uni/package.json` 依赖 - @codex 2025-11-28
+  - [x] `closetcutie-services` → `@closetcutie/services: "workspace:*"` - @codex 2025-11-28
+  - [x] `closetcutie-types` → `@closetcutie/types: "workspace:*"` - @codex 2025-11-28
 
-- [ ] **0.7** 更新 `packages/services/package.json` 依赖
-  - [ ] `closetcutie-types` → `@closetcutie/types: "workspace:*"`
+- [x] **0.7** 更新 `packages/services/package.json` 依赖 - @codex 2025-11-28
+  - [x] `closetcutie-types` → `@closetcutie/types: "workspace:*"` - @codex 2025-11-28
 
-- [ ] **0.8** 重命名包 (配合 0.5-0.7)
-  - [ ] `packages/types/package.json` name → `@closetcutie/types`
-  - [ ] `packages/services/package.json` name → `@closetcutie/services`
-  - [ ] `packages/ui/package.json` name → `@closetcutie/ui`
+- [x] **0.8** 重命名包 (配合 0.5-0.7) - @codex 2025-11-28
+  - [x] `packages/types/package.json` name → `@closetcutie/types` - @codex 2025-11-28
+  - [x] `packages/services/package.json` name → `@closetcutie/services` - @codex 2025-11-28
+  - [x] `packages/ui/package.json` name → `@closetcutie/ui` - @codex 2025-11-28
 
-- [ ] **0.9** 清理旧依赖
+- [x] **0.9** 清理旧依赖 - @codex 2025-11-28
   ```bash
   rm -rf node_modules **/node_modules package-lock.json
   ```
 
-- [ ] **0.10** 安装依赖并验证
+- [x] **0.10** 安装依赖并验证 - @codex 2025-11-28
   ```bash
   pnpm install
   pnpm run dev  # 验证所有应用可正常启动
@@ -77,10 +77,10 @@
 
 ### 阶段 0 验收标准
 
-- [ ] `pnpm install` 成功执行
-- [ ] `pnpm run dev` 所有应用正常启动
-- [ ] `pnpm-lock.yaml` 生成
-- [ ] 无 `package-lock.json` 残留
+- [x] `pnpm install` 成功执行 - @codex 2025-11-28
+- [x] `pnpm run dev` 所有应用正常启动 - @codex 2025-11-28
+- [x] `pnpm-lock.yaml` 生成 - @codex 2025-11-28
+- [x] 无 `package-lock.json` 残留 - @codex 2025-11-28
 
 ---
 
@@ -92,34 +92,34 @@
 
 ### 任务清单
 
-- [ ] **1.1** 升级 `turbo.json` 到新版 tasks 格式
-  - [ ] 将 `pipeline` 改为 `tasks`
-  - [ ] 添加 `lint:web`, `lint:uni` 分离任务
-  - [ ] 添加 `format`, `format:check` 任务
-  - [ ] 添加 `inputs` 配置优化缓存
+- [x] **1.1** 升级 `turbo.json` 到新版 tasks 格式 - @codex 2025-11-28
+  - [x] 将 `pipeline` 改为 `tasks` - @codex 2025-11-28
+  - [x] 添加 `lint:web`, `lint:uni` 分离任务 - @codex 2025-11-28
+  - [x] 添加 `format`, `format:check` 任务 - @codex 2025-11-28
+  - [x] 添加 `inputs` 配置优化缓存 - @codex 2025-11-28
 
-- [ ] **1.2** 升级 turbo 版本
+- [x] **1.2** 升级 turbo 版本 - @codex 2025-11-28
   ```bash
   pnpm add -Dw turbo@^2.3.0
   ```
 
-- [ ] **1.3** 创建 `.nvmrc`
+- [x] **1.3** 创建 `.nvmrc` - @codex 2025-11-28
   ```
   18
   ```
 
-- [ ] **1.4** 创建 `.editorconfig`
+- [x] **1.4** 创建 `.editorconfig` - @codex 2025-11-28
 
-- [ ] **1.5** 清理遗留空目录
+- [x] **1.5** 清理遗留空目录 - @codex 2025-11-28
   ```bash
   rm -rf src/ components/ services/  # 根目录下的空目录
   ```
 
 ### 阶段 1 验收标准
 
-- [ ] `pnpm turbo run build` 成功
-- [ ] turbo.json 使用 `tasks` 而非 `pipeline`
-- [ ] 遗留空目录已删除
+- [x] `pnpm turbo run build` 成功 - @codex 2025-11-28
+- [x] turbo.json 使用 `tasks` 而非 `pipeline` - @codex 2025-11-28
+- [x] 遗留空目录已删除 - @codex 2025-11-28
 
 ---
 
@@ -133,24 +133,24 @@
 
 #### 2.1 创建 TypeScript 配置包
 
-- [ ] **2.1.1** 创建 `packages/tsconfig/` 目录
-- [ ] **2.1.2** 创建 `packages/tsconfig/package.json`
-- [ ] **2.1.3** 创建 `packages/tsconfig/base.json`
-- [ ] **2.1.4** 创建 `packages/tsconfig/react.json`
-- [ ] **2.1.5** 创建 `packages/tsconfig/vue.json`
-- [ ] **2.1.6** 创建 `packages/tsconfig/node.json`
+- [x] **2.1.1** 创建 `packages/tsconfig/` 目录 - @codex 2025-11-28
+- [x] **2.1.2** 创建 `packages/tsconfig/package.json` - @codex 2025-11-28
+- [x] **2.1.3** 创建 `packages/tsconfig/base.json` - @codex 2025-11-28
+- [x] **2.1.4** 创建 `packages/tsconfig/react.json` - @codex 2025-11-28
+- [x] **2.1.5** 创建 `packages/tsconfig/vue.json` - @codex 2025-11-28
+- [x] **2.1.6** 创建 `packages/tsconfig/node.json` - @codex 2025-11-28
 
 #### 2.2 创建 ESLint 配置包
 
-- [ ] **2.2.1** 创建 `packages/eslint-config/` 目录
-- [ ] **2.2.2** 创建 `packages/eslint-config/package.json`
-- [ ] **2.2.3** 创建 `packages/eslint-config/index.js` (基础配置)
-- [ ] **2.2.4** 创建 `packages/eslint-config/react.js`
-- [ ] **2.2.5** 创建 `packages/eslint-config/vue.js`
+- [x] **2.2.1** 创建 `packages/eslint-config/` 目录 - @codex 2025-11-28
+- [x] **2.2.2** 创建 `packages/eslint-config/package.json` - @codex 2025-11-28
+- [x] **2.2.3** 创建 `packages/eslint-config/index.js` (基础配置) - @codex 2025-11-28
+- [x] **2.2.4** 创建 `packages/eslint-config/react.js` - @codex 2025-11-28
+- [x] **2.2.5** 创建 `packages/eslint-config/vue.js` - @codex 2025-11-28
 
 #### 2.3 安装配置包依赖
 
-- [ ] **2.3.1** 安装 ESLint 相关依赖到 `packages/eslint-config`
+- [x] **2.3.1** 安装 ESLint 相关依赖到 `packages/eslint-config` - @codex 2025-11-28
   ```bash
   pnpm --filter @closetcutie/eslint-config add \
     @typescript-eslint/eslint-plugin \
@@ -165,17 +165,17 @@
 
 #### 2.4 更新现有 tsconfig 引用
 
-- [ ] **2.4.1** 更新 `apps/web/tsconfig.json` 使用 `@closetcutie/tsconfig/react.json`
-- [ ] **2.4.2** 更新 `apps/uni/tsconfig.json` 使用 `@closetcutie/tsconfig/vue.json`
-- [ ] **2.4.3** 更新 `apps/api/tsconfig.json` 使用 `@closetcutie/tsconfig/node.json`
-- [ ] **2.4.4** 更新 `packages/types/tsconfig.json`
-- [ ] **2.4.5** 更新 `packages/services/tsconfig.json`
+- [x] **2.4.1** 更新 `apps/web/tsconfig.json` 使用 `@closetcutie/tsconfig/react.json` - @codex 2025-11-28
+- [x] **2.4.2** 更新 `apps/uni/tsconfig.json` 使用 `@closetcutie/tsconfig/vue.json` - @codex 2025-11-28
+- [x] **2.4.3** 更新 `apps/api/tsconfig.json` 使用 `@closetcutie/tsconfig/node.json` - @codex 2025-11-28
+- [x] **2.4.4** 更新 `packages/types/tsconfig.json` - @codex 2025-11-28
+- [x] **2.4.5** 更新 `packages/services/tsconfig.json` - @codex 2025-11-28
 
 ### 阶段 2 验收标准
 
-- [ ] `packages/tsconfig` 和 `packages/eslint-config` 目录存在
-- [ ] `pnpm install` 成功
-- [ ] TypeScript 编译正常 (`pnpm type-check`)
+- [x] `packages/tsconfig` 和 `packages/eslint-config` 目录存在 - @codex 2025-11-28
+- [x] `pnpm install` 成功 - @codex 2025-11-28
+- [x] TypeScript 编译正常 (`pnpm type-check`) - @codex 2025-11-28
 
 ---
 
@@ -411,4 +411,3 @@
 | 日期 | 变更内容 | 执行人 |
 |------|----------|--------|
 | 2025-01-28 | 创建工作计划 | Claude |
-
