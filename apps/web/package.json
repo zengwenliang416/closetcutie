@@ -9,9 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "closetcutie-services": "^0.0.0",
-    "closetcutie-types": "^0.0.0",
-    "closetcutie-ui": "^0.0.0",
+    "@closetcutie/services": "workspace:*",
+    "@closetcutie/types": "workspace:*",
+    "@closetcutie/ui": "workspace:*",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.9.6"

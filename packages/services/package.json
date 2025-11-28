@@ -1,5 +1,5 @@
 {
-  "name": "closetcutie-services",
+  "name": "@closetcutie/services",
   "private": true,
   "version": "0.0.0",
   "main": "./ai.ts",
@@ -9,6 +9,6 @@
   },
   "dependencies": {
     "@google/genai": "^1.30.0",
-    "closetcutie-types": "*"
+    "@closetcutie/types": "workspace:*"
   }
 }

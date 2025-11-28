@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import 'closetcutie-ui/tokens.css'
+import '@closetcutie/ui/tokens.css'
 import App from './App'
 
 const rootElement = document.getElementById('root')

@@ -1,5 +1,5 @@
 {
-  "name": "closetcutie-types",
+  "name": "@closetcutie/types",
   "private": true,
   "version": "0.0.0",
   "main": "./index.ts",

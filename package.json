@@ -3,21 +3,18 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
+  "packageManager": "pnpm@9.15.0",
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
+    "build": "pnpm turbo run build",
+    "dev": "pnpm turbo run dev",
+    "lint": "pnpm turbo run lint",
     "clean": "rm -rf node_modules **/*/node_modules",
-    "web:dev": "npm --prefix apps/web run dev",
-    "uni:dev": "npm --prefix apps/uni run dev:h5",
-    "api:dev": "npm --prefix apps/api run start"
+    "web:dev": "pnpm --filter closetcutie-web dev",
+    "uni:dev": "pnpm --filter closetcutie-uni dev:h5",
+    "api:dev": "pnpm --filter closetcutie-api start"
   },
   "devDependencies": {
-    "turbo": "^1.12.4",
+    "turbo": "^2.3.0",
     "typescript": "^5.4.2"
   }
 }

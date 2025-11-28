@@ -1,19 +1,41 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "pipeline": {
+  "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
+      "outputs": ["dist/**", "build/**", ".next/**", "!.next/cache/**"],
+      "inputs": ["$TURBO_DEFAULT$", "tsconfig*.json", "vite.config.*", "next.config.*"]
     },
     "dev": {
       "cache": false,
-      "persistent": true
+      "persistent": true,
+      "inputs": ["$TURBO_DEFAULT$", "tsconfig*.json", "vite.config.*"]
     },
     "lint": {
-      "outputs": []
+      "dependsOn": ["lint:web", "lint:uni"],
+      "outputs": [],
+      "inputs": ["$TURBO_DEFAULT$", ".eslintrc.*"]
+    },
+    "lint:web": {
+      "outputs": [],
+      "inputs": ["src/**", "package.json", "tsconfig*.json", ".eslintrc.*"]
+    },
+    "lint:uni": {
+      "outputs": [],
+      "inputs": ["src/**", "package.json", "tsconfig*.json", ".eslintrc.*"]
+    },
+    "format": {
+      "cache": false,
+      "outputs": [],
+      "inputs": ["$TURBO_DEFAULT$", ".prettierrc*", ".prettierignore"]
+    },
+    "format:check": {
+      "outputs": [],
+      "inputs": ["$TURBO_DEFAULT$", ".prettierrc*", ".prettierignore"]
     },
     "check-types": {
-      "outputs": []
+      "outputs": [],
+      "inputs": ["$TURBO_DEFAULT$", "tsconfig*.json"]
     }
   }
 }
