@@ -1,20 +1,16 @@
-import React, { useMemo } from 'react'
 import { StorageUnit, ClothingItem } from '@types'
 import { StorageCard } from '../components/StorageCard'
 import { ItemCard } from '../components/ItemCard'
-import { PlusIcon, SearchIcon, BackIcon } from '../components/Icons'
+import { PlusIcon } from '../components/Icons'
 
 interface HomeProps {
   storages: StorageUnit[]
   items: ClothingItem[]
-  searchQuery: string
-  setSearchQuery: (q: string) => void
   onStorageSelect: (id: string | null) => void
   onItemSelect: (item: ClothingItem) => void
-  onAddStorage: () => void // Placeholder
 }
 
-export function Home({ storages, items, searchQuery, setSearchQuery, onStorageSelect, onItemSelect }: HomeProps) {
+export function Home({ storages, items, onStorageSelect, onItemSelect }: HomeProps) {
   return (
     <div className="animate-fade-in-up">
       <h2 className="text-lg font-bold text-gray-600 mb-4 px-1">My Warehouses</h2>

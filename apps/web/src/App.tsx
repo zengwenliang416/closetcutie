@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { HashRouter as Router, Routes, Route, useNavigate, useParams, useLocation } from 'react-router-dom'
 import { INITIAL_STORAGES, INITIAL_ITEMS } from './constants'
 import { StorageUnit, ClothingItem } from '@types'
@@ -11,7 +11,7 @@ import { PlusIcon } from './components/Icons'
 
 function AppContent() {
   const initial = loadState()
-  const [storages, setStorages] = useState<StorageUnit[]>(initial?.storages || INITIAL_STORAGES)
+  const [storages] = useState<StorageUnit[]>(initial?.storages || INITIAL_STORAGES)
   const [items, setItems] = useState<ClothingItem[]>(initial?.items || INITIAL_ITEMS)
   const [isAddItemOpen, setIsAddItemOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
@@ -62,17 +62,17 @@ function AppContent() {
 
       <main className="max-w-4xl mx-auto p-6">
         <Routes>
-          <Route path="/" element={
-            <Home 
-              storages={storages} 
-              items={items} 
-              searchQuery={searchQuery}
-              setSearchQuery={setSearchQuery}
-              onStorageSelect={(id) => navigate(id === 'all' ? '/storage/all' : `/storage/${id}`)}
-              onItemSelect={setSelectedItem}
-              onAddStorage={() => {}} // Placeholder
-            />
-          } />
+          <Route
+            path="/"
+            element={
+              <Home
+                storages={storages}
+                items={items}
+                onStorageSelect={(id) => navigate(id === 'all' ? '/storage/all' : `/storage/${id}`)}
+                onItemSelect={setSelectedItem}
+              />
+            }
+          />
           <Route path="/storage/:id" element={
             <StorageWrapper items={items} searchQuery={searchQuery} onItemSelect={setSelectedItem} />
           } />

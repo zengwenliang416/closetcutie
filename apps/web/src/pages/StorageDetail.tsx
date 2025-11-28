@@ -1,5 +1,5 @@
-import React, { useMemo } from 'react'
-import { StorageUnit, ClothingItem } from '@types'
+import { useMemo } from 'react'
+import { ClothingItem } from '@types'
 import { ItemCard } from '../components/ItemCard'
 
 interface StorageDetailProps {
