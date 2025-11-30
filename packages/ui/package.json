@@ -2,7 +2,15 @@
   "name": "@closetcutie/ui",
   "private": true,
   "version": "0.0.0",
+  "sideEffects": [
+    "*.css"
+  ],
+  "files": [
+    "tokens.css",
+    "icons"
+  ],
   "exports": {
-    "./tokens.css": "./tokens.css"
+    "./tokens.css": "./tokens.css",
+    "./icons/*": "./icons/*"
   }
 }
