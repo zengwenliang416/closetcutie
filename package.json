@@ -18,24 +18,28 @@
     "web:dev": "pnpm --filter closetcutie-web dev",
     "uni:dev": "pnpm --filter closetcutie-uni dev:h5",
     "api:dev": "pnpm --filter closetcutie-api start",
-    "prepare": "husky"
+    "prepare": "husky",
+    "changeset": "changeset",
+    "version": "changeset version && pnpm install --lockfile-only",
+    "release": "pnpm changeset publish"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.27.0",
     "@typescript-eslint/eslint-plugin": "^8.48.0",
     "@typescript-eslint/parser": "^8.48.0",
+    "eslint": "^8.57.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-vue": "^10.6.2",
     "eslint-plugin-vuejs-accessibility": "^2.4.1",
-    "eslint": "^8.57.0",
     "husky": "^9.0.0",
     "lint-staged": "^15.2.0",
     "prettier": "^3.2.0",
-    "vue-eslint-parser": "^10.2.0",
     "turbo": "^2.3.0",
-    "typescript": "^5.4.2"
+    "typescript": "^5.4.2",
+    "vue-eslint-parser": "^10.2.0"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx,vue,json,md,css}": [
