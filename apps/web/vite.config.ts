@@ -10,8 +10,8 @@ export default defineConfig(({ mode }) => {
     resolve: {
       alias: {
         '@': path.resolve(__dirname, 'src'),
-        '@types': path.resolve(__dirname, '../../packages/types'),
-        '@services': path.resolve(__dirname, '../../packages/services')
+        '@closetcutie/types': path.resolve(__dirname, '../../packages/types/src'),
+        '@closetcutie/services': path.resolve(__dirname, '../../packages/services/src')
       }
     },
     server: {
