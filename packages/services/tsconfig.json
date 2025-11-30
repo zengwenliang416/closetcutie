@@ -2,12 +2,11 @@
   "extends": "@closetcutie/tsconfig/node",
   "compilerOptions": {
     "baseUrl": ".",
-    "module": "ESNext",
-    "moduleResolution": "bundler",
-    "paths": {
-      "@types": ["../types"],
-      "@types/*": ["../types/*"]
-    }
+    "rootDir": "src",
+    "outDir": "dist",
+    "declaration": true,
+    "allowImportingTsExtensions": false,
+    "noEmit": false
   },
-  "include": ["."]
+  "include": ["src"]
 }

@@ -2,17 +2,29 @@
   "name": "@closetcutie/services",
   "private": true,
   "version": "0.0.0",
-  "main": "./ai.ts",
-  "types": "./ai.ts",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
+    "build": "tsc -p tsconfig.json",
     "type-check": "tsc --noEmit",
     "check-types": "pnpm run type-check"
   },
   "exports": {
-    ".": "./ai.ts"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
   },
   "dependencies": {
-    "@google/genai": "^1.30.0",
-    "@closetcutie/types": "workspace:*"
+    "@closetcutie/types": "workspace:*",
+    "@google/genai": "^1.30.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.2"
   }
 }

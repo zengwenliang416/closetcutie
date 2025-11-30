@@ -1,5 +1,5 @@
 import { GoogleGenAI, Type } from '@google/genai'
-import { AIAnalysisResult, Category } from '@types'
+import { AIAnalysisResult, Category } from '@closetcutie/types'
 
 const ai = new GoogleGenAI({ apiKey: process.env.API_KEY })
 
