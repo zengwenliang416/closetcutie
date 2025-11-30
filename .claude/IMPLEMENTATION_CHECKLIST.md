@@ -221,8 +221,8 @@
   ```bash
   pnpm exec husky init
   ```
-- [x] **3.2.4** 创建 `.husky/pre-commit` - @codex 2025-11-30（已存在并复核）
-- [ ] **3.2.5** (可选) 创建 `.husky/commit-msg`
+- [x] **3.2.4** 创建 `.husky/pre-commit` - @codex 2025-11-30（更新为运行 lint-staged）
+- [x] **3.2.5** (可选) 创建 `.husky/commit-msg` - @codex 2025-11-30
 
 #### 3.3 配置 lint-staged
 
@@ -245,8 +245,8 @@
 
 - [x] `pnpm lint` 可执行 (可能有警告/错误，但命令本身成功) - @codex 2025-11-30（存在 import 排序 warning，命令成功）
 - [x] `pnpm format` 可执行 - @codex 2025-11-30
-- [ ] Git commit 时触发 pre-commit hook
-- [ ] lint-staged 正常工作
+- [x] Git commit 时触发 pre-commit hook - @codex 2025-11-30（脚本经 `.husky/_/pre-commit` 验证）
+- [x] lint-staged 正常工作 - @codex 2025-11-30（`pnpm lint-staged --allow-empty` 验证）
 
 ---
 
@@ -298,31 +298,31 @@
 
 ### 任务清单
 
-- [ ] **5.1** 安装 Changesets
+- [x] **5.1** 安装 Changesets - @codex 2025-11-30
 
   ```bash
   pnpm add -Dw @changesets/cli@^2.27.0
   ```
 
-- [ ] **5.2** 初始化 Changesets
+- [x] **5.2** 初始化 Changesets - @codex 2025-11-30
 
   ```bash
   pnpm changeset init
   ```
 
-- [ ] **5.3** 配置 `.changeset/config.json`
-  - [ ] 设置 `access: "restricted"` (私有包)
-  - [ ] 设置 `baseBranch: "main"`
+- [x] **5.3** 配置 `.changeset/config.json` - @codex 2025-11-30
+  - [x] 设置 `access: "restricted"` (私有包) - @codex 2025-11-30
+  - [x] 设置 `baseBranch: "main"` - @codex 2025-11-30
 
-- [ ] **5.4** 添加 package.json 脚本
-  - [ ] `changeset`
-  - [ ] `version`
-  - [ ] `release`
+- [x] **5.4** 添加 package.json 脚本 - @codex 2025-11-30
+  - [x] `changeset` - @codex 2025-11-30
+  - [x] `version` - @codex 2025-11-30
+  - [x] `release` - @codex 2025-11-30
 
 ### 阶段 5 验收标准
 
-- [ ] `.changeset/` 目录存在
-- [ ] `pnpm changeset` 可正常执行
+- [x] `.changeset/` 目录存在 - @codex 2025-11-30
+- [x] `pnpm changeset` 可正常执行 - @codex 2025-11-30（`pnpm changeset status --since=HEAD`）
 
 ---
 
