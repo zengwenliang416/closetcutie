@@ -19,14 +19,14 @@ const getBaseUrl = () => {
 export const identifyClothingItem = async (base64Image: string): Promise<AIAnalysisResult> => {
   try {
     const url = `${getBaseUrl()}/ai/identify`
-    
+
     // uni.request 是跨平台的请求 API
     const response = await new Promise<UniApp.RequestSuccessCallbackResult>((resolve, reject) => {
       uni.request({
         url,
         method: 'POST',
         header: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/json'
         },
         data: { imageBase64: base64Image },
         success: (res) => resolve(res),
@@ -42,10 +42,10 @@ export const identifyClothingItem = async (base64Image: string): Promise<AIAnaly
   } catch (error) {
     console.error('AI identification failed:', error)
     return {
-      name: "",
+      name: '',
       category: Category.OTHER,
-      color: "",
-      tags: [],
+      color: '',
+      tags: []
     }
   }
 }

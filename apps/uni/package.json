@@ -36,7 +36,9 @@
     "build:quickapp-webview-huawei": "uni build -p quickapp-webview-huawei",
     "build:quickapp-webview-union": "uni build -p quickapp-webview-union",
     "type-check": "vue-tsc --noEmit",
-    "check-types": "pnpm run type-check"
+    "check-types": "pnpm run type-check",
+    "lint": "eslint --ext .ts,.tsx,.js,.vue src",
+    "lint:fix": "pnpm run lint -- --fix"
   },
   "dependencies": {
     "@dcloudio/uni-app": "3.0.0-4020920240930001",
@@ -66,9 +68,16 @@
     "@dcloudio/uni-cli-shared": "3.0.0-4020920240930001",
     "@dcloudio/uni-stacktracey": "3.0.0-4020920240930001",
     "@dcloudio/vite-plugin-uni": "3.0.0-4020920240930001",
+    "@typescript-eslint/eslint-plugin": "^8.48.0",
+    "@typescript-eslint/parser": "^8.48.0",
     "@vue/tsconfig": "^0.5.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-vue": "^10.6.2",
+    "eslint-plugin-vuejs-accessibility": "^2.4.1",
     "typescript": "^5.4.2",
     "vite": "^5.1.5",
+    "vue-eslint-parser": "^10.2.0",
     "vue-tsc": "^2.0.6"
   }
 }

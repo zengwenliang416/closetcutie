@@ -42,14 +42,14 @@ async function analyzeImage(path: string) {
     // checking service implementation: it sends { imageBase64: base64Image }
     // Usually it's safer to send the full data URI or just the content depending on backend.
     // Assuming backend handles standard base64 strings.
-    
+
     const result = await identifyClothingItem(base64)
-    
+
     formData.value.name = result.name || 'New Item'
     formData.value.category = result.category || Category.OTHER
     formData.value.color = result.color || ''
     formData.value.tags = result.tags.join(', ')
-    
+
     showForm.value = true
   } catch (error) {
     uni.showToast({ title: 'Analysis failed', icon: 'none' })
@@ -92,7 +92,7 @@ function fileToBase64(path: string): Promise<string> {
 
 async function saveItem() {
   uni.showLoading({ title: 'Saving...' })
-  
+
   let imageUrl = imagePath.value || 'https://picsum.photos/400/400'
 
   // #ifndef H5
@@ -111,12 +111,15 @@ async function saveItem() {
     }
   }
   // #endif
-  
+
   store.addItem({
     name: formData.value.name,
     category: formData.value.category as Category,
     color: formData.value.color,
-    tags: formData.value.tags.split(',').map(t => t.trim()).filter(Boolean),
+    tags: formData.value.tags
+      .split(',')
+      .map((t) => t.trim())
+      .filter(Boolean),
     storageId: formData.value.storageId,
     imageUrl: imageUrl
   })
@@ -139,7 +142,7 @@ async function saveItem() {
         <text class="icon">📷</text>
         <text class="text">Take a photo or upload</text>
       </view>
-      
+
       <view v-if="isAnalyzing" class="analyzing-overlay">
         <text class="analyzing-text">AI Analyzing...</text>
       </view>
@@ -153,7 +156,10 @@ async function saveItem() {
 
       <view class="form-item">
         <text class="label">Category</text>
-        <picker :range="categories" @change="(e: any) => formData.category = categories[e.detail.value]">
+        <picker
+          :range="categories"
+          @change="(e: any) => (formData.category = categories[e.detail.value])"
+        >
           <view class="picker">
             {{ formData.category || 'Select Category' }}
           </view>
@@ -167,14 +173,22 @@ async function saveItem() {
 
       <view class="form-item">
         <text class="label">Tags</text>
-        <input class="input" v-model="formData.tags" placeholder="casual, summer (comma separated)" />
+        <input
+          class="input"
+          v-model="formData.tags"
+          placeholder="casual, summer (comma separated)"
+        />
       </view>
 
       <view class="form-item">
         <text class="label">Storage</text>
-        <picker :range="storages" range-key="name" @change="(e: any) => formData.storageId = storages[e.detail.value].id">
+        <picker
+          :range="storages"
+          range-key="name"
+          @change="(e: any) => (formData.storageId = storages[e.detail.value].id)"
+        >
           <view class="picker">
-            {{ storages.find(s => s.id === formData.storageId)?.name }}
+            {{ storages.find((s) => s.id === formData.storageId)?.name }}
           </view>
         </picker>
       </view>
@@ -185,47 +199,92 @@ async function saveItem() {
 </template>
 
 <style>
-.container { padding: 20px; min-height: 100vh; background: #fff; }
+.container {
+  padding: 20px;
+  min-height: 100vh;
+  background: #fff;
+}
 
-.image-section { 
-  height: 300px; 
-  background: #f3f4f6; 
-  border-radius: 24px; 
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
-  margin-bottom: 32px; 
-  position: relative; 
+.image-section {
+  height: 300px;
+  background: #f3f4f6;
+  border-radius: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 32px;
+  position: relative;
   overflow: hidden;
   border: 2px dashed #e5e7eb;
 }
 
-.preview-image { width: 100%; height: 100%; }
+.preview-image {
+  width: 100%;
+  height: 100%;
+}
 
-.upload-placeholder { display: flex; flex-direction: column; align-items: center; }
-.icon { font-size: 48px; margin-bottom: 12px; }
-.text { color: #9ca3af; font-size: 14px; }
+.upload-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+.text {
+  color: #9ca3af;
+  font-size: 14px;
+}
 
 .analyzing-overlay {
-  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.5);
-  display: flex; justify-content: center; align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.analyzing-text { color: #fff; font-weight: bold; font-size: 18px; }
+.analyzing-text {
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+}
 
-.form-section { animation: slideUp 0.3s ease-out; }
+.form-section {
+  animation: slideUp 0.3s ease-out;
+}
 @keyframes slideUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.form-item { margin-bottom: 20px; }
-.label { display: block; font-size: 12px; font-weight: bold; color: #6b7280; margin-bottom: 8px; text-transform: uppercase; }
-.input, .picker { 
-  background: #f9fafb; 
-  padding: 16px; 
-  border-radius: 12px; 
-  font-size: 16px; 
+.form-item {
+  margin-bottom: 20px;
+}
+.label {
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  color: #6b7280;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+.input,
+.picker {
+  background: #f9fafb;
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 16px;
   color: #1f2937;
 }
 
@@ -238,5 +297,7 @@ async function saveItem() {
   margin-top: 32px;
   border: none;
 }
-.save-btn:active { opacity: 0.9; }
+.save-btn:active {
+  opacity: 0.9;
+}
 </style>
