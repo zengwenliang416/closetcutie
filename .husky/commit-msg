@@ -1,0 +1,12 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+commit_msg_file=$1
+commit_msg=$(cat "$commit_msg_file")
+
+pattern='^(feat|fix|chore|docs|refactor|test|ci|build|style|revert)(\([a-z0-9\-]+\))?!?: .+'
+
+if ! printf '%s' "$commit_msg" | grep -Eq "$pattern"; then
+  echo "⛔️ commit message must follow Conventional Commits, e.g. 'feat(ui): add card component'"
+  exit 1
+fi
