@@ -59,6 +59,22 @@ importers:
       '@google/genai':
         specifier: ^1.30.0
         version: 1.30.0
+    devDependencies:
+      '@typescript-eslint/eslint-plugin':
+        specifier: ^8.48.0
+        version: 8.48.0(@typescript-eslint/parser@8.48.0(eslint@8.57.1)(typescript@5.8.3))(eslint@8.57.1)(typescript@5.8.3)
+      '@typescript-eslint/parser':
+        specifier: ^8.48.0
+        version: 8.48.0(eslint@8.57.1)(typescript@5.8.3)
+      eslint:
+        specifier: ^8.57.0
+        version: 8.57.1
+      eslint-plugin-import:
+        specifier: ^2.32.0
+        version: 2.32.0(@typescript-eslint/parser@8.48.0(eslint@8.57.1)(typescript@5.8.3))(eslint@8.57.1)
+      typescript:
+        specifier: ^5.4.2
+        version: 5.8.3
 
   apps/uni:
     dependencies:
@@ -268,10 +284,18 @@ importers:
       '@google/genai':
         specifier: ^1.30.0
         version: 1.30.0
+    devDependencies:
+      typescript:
+        specifier: ^5.4.2
+        version: 5.8.3
 
   packages/tsconfig: {}
 
-  packages/types: {}
+  packages/types:
+    devDependencies:
+      typescript:
+        specifier: ^5.4.2
+        version: 5.8.3
 
   packages/ui: {}
 

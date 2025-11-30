@@ -215,36 +215,36 @@
 
 #### 3.2 配置文件
 
-- [ ] **3.2.1** 创建 `.prettierrc`
-- [ ] **3.2.2** 创建 `.prettierignore`
-- [ ] **3.2.3** 初始化 husky
+- [x] **3.2.1** 创建 `.prettierrc` - @codex 2025-11-30（已存在并复核）
+- [x] **3.2.2** 创建 `.prettierignore` - @codex 2025-11-30（已存在并复核）
+- [x] **3.2.3** 初始化 husky - @codex 2025-11-30（已存在并复核）
   ```bash
   pnpm exec husky init
   ```
-- [ ] **3.2.4** 创建 `.husky/pre-commit`
+- [x] **3.2.4** 创建 `.husky/pre-commit` - @codex 2025-11-30（已存在并复核）
 - [ ] **3.2.5** (可选) 创建 `.husky/commit-msg`
 
 #### 3.3 配置 lint-staged
 
-- [ ] **3.3.1** 在根 `package.json` 添加 `lint-staged` 配置
+- [x] **3.3.1** 在根 `package.json` 添加 `lint-staged` 配置 - @codex 2025-11-30（已存在并复核）
 
 #### 3.4 应用级 ESLint 配置
 
-- [ ] **3.4.1** 创建 `apps/web/.eslintrc.js`
-- [ ] **3.4.2** 在 `apps/web/package.json` 添加 lint 脚本
-- [ ] **3.4.3** 创建 `apps/uni/.eslintrc.js`
-- [ ] **3.4.4** 在 `apps/uni/package.json` 添加 lint 脚本
-- [ ] **3.4.5** (可选) 创建 `apps/api/.eslintrc.js`
+- [x] **3.4.1** 创建 `apps/web/.eslintrc.js`（按需使用 .cjs 以兼容 type:module）- @codex 2025-11-30
+- [x] **3.4.2** 在 `apps/web/package.json` 添加 lint 脚本 - @codex 2025-11-30（已存在并复核）
+- [x] **3.4.3** 创建 `apps/uni/.eslintrc.js` - @codex 2025-11-30
+- [x] **3.4.4** 在 `apps/uni/package.json` 添加 lint 脚本 - @codex 2025-11-30（已存在并复核）
+- [x] **3.4.5** (可选) 创建 `apps/api/.eslintrc.js` - @codex 2025-11-30
 
 #### 3.5 更新根 package.json 脚本
 
-- [ ] **3.5.1** 添加 `lint`, `lint:fix`, `format`, `format:check` 脚本
-- [ ] **3.5.2** 添加 `prepare` 脚本 (husky)
+- [x] **3.5.1** 添加 `lint`, `lint:fix`, `format`, `format:check` 脚本 - @codex 2025-11-30（已存在并复核）
+- [x] **3.5.2** 添加 `prepare` 脚本 (husky) - @codex 2025-11-30（已存在并复核）
 
 ### 阶段 3 验收标准
 
-- [ ] `pnpm lint` 可执行 (可能有警告/错误，但命令本身成功)
-- [ ] `pnpm format` 可执行
+- [x] `pnpm lint` 可执行 (可能有警告/错误，但命令本身成功) - @codex 2025-11-30（存在 import 排序 warning，命令成功）
+- [x] `pnpm format` 可执行 - @codex 2025-11-30
 - [ ] Git commit 时触发 pre-commit hook
 - [ ] lint-staged 正常工作
 
@@ -260,33 +260,33 @@
 
 #### 4.1 优化 packages/ui
 
-- [ ] **4.1.1** 更新 `packages/ui/package.json`
-  - [ ] 添加 `sideEffects: ["*.css"]`
-  - [ ] 添加完整的 `exports` 字段
-  - [ ] 添加 `files` 字段
+- [x] **4.1.1** 更新 `packages/ui/package.json` - @codex 2025-11-30
+  - [x] 添加 `sideEffects: ["*.css"]` - @codex 2025-11-30
+  - [x] 添加完整的 `exports` 字段 - @codex 2025-11-30
+  - [x] 添加 `files` 字段 - @codex 2025-11-30
 
 #### 4.2 优化 packages/types
 
-- [ ] **4.2.1** 更新 `packages/types/package.json`
-  - [ ] 添加 `type: "module"`
-  - [ ] 添加 `main`, `types`, `exports` 字段
-  - [ ] 添加 `build`, `type-check` 脚本
-- [ ] **4.2.2** 确保 tsconfig.json 正确配置
+- [x] **4.2.1** 更新 `packages/types/package.json` - @codex 2025-11-30
+  - [x] 添加 `type: "module"` - @codex 2025-11-30
+  - [x] 添加 `main`, `types`, `exports` 字段 - @codex 2025-11-30
+  - [x] 添加 `build`, `type-check` 脚本 - @codex 2025-11-30
+- [x] **4.2.2** 确保 tsconfig.json 正确配置 - @codex 2025-11-30
 
 #### 4.3 优化 packages/services
 
-- [ ] **4.3.1** 创建/更新 `packages/services/tsconfig.json`
-- [ ] **4.3.2** 更新 `packages/services/package.json`
-  - [ ] 添加 `type: "module"`
-  - [ ] 添加 `main`, `types`, `exports` 字段
-  - [ ] 添加 `build`, `type-check` 脚本
-  - [ ] 更新依赖引用
+- [x] **4.3.1** 创建/更新 `packages/services/tsconfig.json` - @codex 2025-11-30
+- [x] **4.3.2** 更新 `packages/services/package.json` - @codex 2025-11-30
+  - [x] 添加 `type: "module"` - @codex 2025-11-30
+  - [x] 添加 `main`, `types`, `exports` 字段 - @codex 2025-11-30
+  - [x] 添加 `build`, `type-check` 脚本 - @codex 2025-11-30
+  - [x] 更新依赖引用 - @codex 2025-11-30
 
 ### 阶段 4 验收标准
 
-- [ ] `pnpm --filter @closetcutie/types build` 成功
-- [ ] `pnpm --filter @closetcutie/services build` 成功
-- [ ] `pnpm build` 全部成功
+- [x] `pnpm --filter @closetcutie/types build` 成功 - @codex 2025-11-30
+- [x] `pnpm --filter @closetcutie/services build` 成功 - @codex 2025-11-30
+- [x] `pnpm build` 全部成功 - @codex 2025-11-30
 
 ---
 
