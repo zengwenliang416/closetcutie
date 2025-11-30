@@ -5,9 +5,9 @@ export const identifyClothingItem = async (base64Image: string): Promise<AIAnaly
     const response = await fetch('/ai/identify', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ imageBase64: base64Image }),
+      body: JSON.stringify({ imageBase64: base64Image })
     })
 
     if (!response.ok) {
@@ -19,10 +19,10 @@ export const identifyClothingItem = async (base64Image: string): Promise<AIAnaly
   } catch (error) {
     console.error('AI identification failed:', error)
     return {
-      name: "",
+      name: '',
       category: Category.OTHER,
-      color: "",
-      tags: [],
+      color: '',
+      tags: []
     }
   }
 }
