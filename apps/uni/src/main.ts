@@ -17,7 +17,8 @@ export function createApp() {
     })
   )
 
-  app.use(pinia as any)
+  // @ts-expect-error uni-app SSR 类型兼容
+  app.use(pinia)
   return {
     app,
     Pinia

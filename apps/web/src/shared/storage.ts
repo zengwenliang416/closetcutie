@@ -19,5 +19,7 @@ export function loadState(): AppState | null {
 export function saveState(state: AppState) {
   try {
     localStorage.setItem(KEY, JSON.stringify(state))
-  } catch {}
+  } catch {
+    // 静默处理存储失败（如配额超限）
+  }
 }
