@@ -375,14 +375,14 @@
   - [x] 提交规范 - @codex 2025-11-30
   - [x] 代码规范 - @codex 2025-11-30
 
-- [ ] **7.3** (可选) 清理/归档此改造文档
-  - [ ] 移动 `.claude/MONOREPO_UPGRADE_PLAN.md` 到 `docs/` 或删除
+- [x] **7.3** (可选) 清理/归档此改造文档 - @codex 2025-11-30
+  - [x] 移动 `.claude/MONOREPO_UPGRADE_PLAN.md` 到 `docs/` - @codex 2025-11-30
 
 ### 阶段 7 验收标准
 
 - [x] README.md 更新完成 - @codex 2025-11-30
 - [x] CONTRIBUTING.md 创建完成 - @codex 2025-11-30
-- [ ] 新开发者可根据文档完成环境搭建
+- [x] 新开发者可根据文档完成环境搭建 - @codex 2025-11-30
 
 ---
 
@@ -390,15 +390,15 @@
 
 完成所有阶段后，执行最终验收：
 
-- [ ] `pnpm install` 成功 (无警告/错误)
+- [x] `pnpm install` 成功 (无警告/错误) - @wenliang_zeng 2025-11-30（用户本地执行结果）
 - [ ] `pnpm dev` 所有应用正常启动
-- [ ] `pnpm build` 全部成功
-- [ ] `pnpm lint` 通过 (或仅剩可接受的警告)
-- [ ] `pnpm format:check` 通过
-- [ ] `pnpm type-check` 通过
-- [ ] Git commit 触发 pre-commit hook
+- [x] `pnpm build` 全部成功 - @codex 2025-11-30
+- [x] `pnpm lint` 通过 (或仅剩可接受的警告) - @codex 2025-11-30（仅保留 import-order warning）
+- [x] `pnpm format:check` 通过 - @codex 2025-11-30
+- [x] `pnpm type-check` 通过 - @codex 2025-11-30
+- [x] Git commit 触发 pre-commit hook - @codex 2025-11-30（Husky 手动验证）
 - [ ] CI 流程正常运行
-- [ ] 文档更新完成
+- [x] 文档更新完成 - @codex 2025-11-30
 
 ---
 
