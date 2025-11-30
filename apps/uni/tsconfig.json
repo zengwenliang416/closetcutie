@@ -5,10 +5,10 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@types": ["../../packages/types"],
-      "@types/*": ["../../packages/types/*"],
-      "@services": ["../../packages/services"],
-      "@services/*": ["../../packages/services/*"]
+      "@closetcutie/types": ["../../packages/types/src"],
+      "@closetcutie/types/*": ["../../packages/types/src/*"],
+      "@closetcutie/services": ["../../packages/services/src"],
+      "@closetcutie/services/*": ["../../packages/services/src/*"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
