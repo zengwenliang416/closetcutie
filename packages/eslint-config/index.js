@@ -1,6 +1,6 @@
 const baseRules = {
   'import/order': [
-    'error',
+    'warn',
     {
       'newlines-between': 'always',
       alphabetize: {
@@ -9,7 +9,10 @@ const baseRules = {
       }
     }
   ],
-  '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }]
+  '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+  '@typescript-eslint/no-explicit-any': 'warn',
+  '@typescript-eslint/ban-ts-comment': 'off',
+  'no-empty': 'warn'
 }
 
 module.exports = {

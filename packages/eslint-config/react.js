@@ -6,11 +6,7 @@ module.exports = {
     ...baseConfig.env,
     browser: true
   },
-  extends: [
-    ...baseConfig.extends,
-    'plugin:react/recommended',
-    'plugin:react-hooks/recommended'
-  ],
+  extends: [...baseConfig.extends, 'plugin:react/recommended', 'plugin:react-hooks/recommended'],
   plugins: [...new Set([...baseConfig.plugins, 'react', 'react-hooks'])],
   parserOptions: {
     ...baseConfig.parserOptions,
@@ -18,6 +14,10 @@ module.exports = {
       ...(baseConfig.parserOptions.ecmaFeatures || {}),
       jsx: true
     }
+  },
+  rules: {
+    ...baseConfig.rules,
+    'react/react-in-jsx-scope': 'off'
   },
   settings: {
     react: {
