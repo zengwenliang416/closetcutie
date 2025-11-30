@@ -25,38 +25,38 @@ closetcutie/
 
 ### 1.2 技术栈
 
-| 层级 | 当前 | 改造后 |
-|------|------|--------|
-| 构建编排 | Turborepo 1.12.4 | Turborepo 2.x |
-| 包管理 | npm workspaces | **pnpm workspaces** |
-| Web 前端 | React 19 + Vite 6 + React Router 7 | 不变 |
-| 移动端 | Uni-App (Vue 3) + Pinia | 不变 |
-| API 服务 | Node.js + @google/genai | 不变 |
-| 语言 | TypeScript 5.4+ | 不变 |
+| 层级     | 当前                               | 改造后              |
+| -------- | ---------------------------------- | ------------------- |
+| 构建编排 | Turborepo 1.12.4                   | Turborepo 2.x       |
+| 包管理   | npm workspaces                     | **pnpm workspaces** |
+| Web 前端 | React 19 + Vite 6 + React Router 7 | 不变                |
+| 移动端   | Uni-App (Vue 3) + Pinia            | 不变                |
+| API 服务 | Node.js + @google/genai            | 不变                |
+| 语言     | TypeScript 5.4+                    | 不变                |
 
 ### 1.3 为什么选择 pnpm
 
-| 特性 | npm | pnpm |
-|------|-----|------|
-| 磁盘空间 | 每个项目完整安装 | 全局存储 + 硬链接，节省 50%+ |
-| 安装速度 | 较慢 | 快 2-3 倍 |
-| 依赖隔离 | 扁平化可能导致幽灵依赖 | 严格隔离，杜绝幽灵依赖 |
-| Monorepo 支持 | 基础 | 原生优化，workspace 协议更强 |
-| 与 Turborepo | 兼容 | 官方推荐组合 |
+| 特性          | npm                    | pnpm                         |
+| ------------- | ---------------------- | ---------------------------- |
+| 磁盘空间      | 每个项目完整安装       | 全局存储 + 硬链接，节省 50%+ |
+| 安装速度      | 较慢                   | 快 2-3 倍                    |
+| 依赖隔离      | 扁平化可能导致幽灵依赖 | 严格隔离，杜绝幽灵依赖       |
+| Monorepo 支持 | 基础                   | 原生优化，workspace 协议更强 |
+| 与 Turborepo  | 兼容                   | 官方推荐组合                 |
 
 ### 1.4 现状评估
 
-| 评估维度 | 当前状态 | 评分 | 说明 |
-|----------|----------|------|------|
-| 目录结构 | ✅ 良好 | 8/10 | apps/ + packages/ 分离清晰 |
-| 工作空间 | ⚠️ 待迁移 | 6/10 | npm workspaces → pnpm |
-| 构建配置 | ⚠️ 待升级 | 5/10 | turbo.json 使用旧版 `pipeline` 格式 |
+| 评估维度   | 当前状态  | 评分 | 说明                                |
+| ---------- | --------- | ---- | ----------------------------------- |
+| 目录结构   | ✅ 良好   | 8/10 | apps/ + packages/ 分离清晰          |
+| 工作空间   | ⚠️ 待迁移 | 6/10 | npm workspaces → pnpm               |
+| 构建配置   | ⚠️ 待升级 | 5/10 | turbo.json 使用旧版 `pipeline` 格式 |
 | TypeScript | ⚠️ 待完善 | 6/10 | 缺少共享配置包，部分包缺少 tsconfig |
-| 代码规范 | ❌ 缺失 | 0/10 | 无 ESLint / Prettier |
-| Git Hooks | ❌ 缺失 | 0/10 | 无 husky / lint-staged |
-| 版本管理 | ❌ 缺失 | 0/10 | 无 Changesets，包版本固定 0.0.0 |
-| CI/CD | ❌ 缺失 | 0/10 | 无 GitHub Actions |
-| 文档 | ⚠️ 基础 | 5/10 | 有 README，缺少贡献指南 |
+| 代码规范   | ❌ 缺失   | 0/10 | 无 ESLint / Prettier                |
+| Git Hooks  | ❌ 缺失   | 0/10 | 无 husky / lint-staged              |
+| 版本管理   | ❌ 缺失   | 0/10 | 无 Changesets，包版本固定 0.0.0     |
+| CI/CD      | ❌ 缺失   | 0/10 | 无 GitHub Actions                   |
+| 文档       | ⚠️ 基础   | 5/10 | 有 README，缺少贡献指南             |
 
 ### 1.5 已发现的问题
 
@@ -73,24 +73,24 @@ closetcutie/
 
 ### 2.1 核心原则
 
-| 原则 | 说明 |
-|------|------|
-| **UI 不变** | 不修改任何组件、样式、业务逻辑代码 |
-| **渐进式** | 每阶段可独立完成、验证、回滚 |
-| **标准化** | 遵循 Turborepo + pnpm 官方最佳实践 |
+| 原则           | 说明                                    |
+| -------------- | --------------------------------------- |
+| **UI 不变**    | 不修改任何组件、样式、业务逻辑代码      |
+| **渐进式**     | 每阶段可独立完成、验证、回滚            |
+| **标准化**     | 遵循 Turborepo + pnpm 官方最佳实践      |
 | **双框架兼容** | ESLint/TypeScript 同时支持 React 和 Vue |
 
 ### 2.2 改造范围
 
-| 范围 | 包含 | 不包含 |
-|------|------|--------|
-| 包管理器 | npm → pnpm 迁移 | - |
-| 工程配置 | turbo.json, tsconfig, package.json | - |
-| 代码质量 | ESLint, Prettier, husky | - |
-| 版本管理 | Changesets | - |
-| CI/CD | GitHub Actions | - |
-| 业务代码 | - | apps/*, packages/services, packages/types |
-| UI/样式 | - | packages/ui/tokens.css, 所有组件样式 |
+| 范围     | 包含                               | 不包含                                     |
+| -------- | ---------------------------------- | ------------------------------------------ |
+| 包管理器 | npm → pnpm 迁移                    | -                                          |
+| 工程配置 | turbo.json, tsconfig, package.json | -                                          |
+| 代码质量 | ESLint, Prettier, husky            | -                                          |
+| 版本管理 | Changesets                         | -                                          |
+| CI/CD    | GitHub Actions                     | -                                          |
+| 业务代码 | -                                  | apps/\*, packages/services, packages/types |
+| UI/样式  | -                                  | packages/ui/tokens.css, 所有组件样式       |
 
 ---
 
@@ -149,6 +149,7 @@ packages:
 使用 pnpm workspace 协议:
 
 **apps/web/package.json**:
+
 ```json
 {
   "dependencies": {
@@ -160,6 +161,7 @@ packages:
 ```
 
 **packages/services/package.json**:
+
 ```json
 {
   "dependencies": {
@@ -191,6 +193,7 @@ auto-install-peers=true
 ```
 
 **说明**:
+
 - `shamefully-hoist=true`: 兼容某些不规范的包 (如 Uni-App)
 - `strict-peer-dependencies=false`: 放宽 peer 依赖检查
 - `auto-install-peers=true`: 自动安装 peer 依赖
@@ -220,13 +223,14 @@ module.exports = {
       //     'missing-peer': '^1.0.0'
       //   };
       // }
-      return pkg;
+      return pkg
     }
   }
-};
+}
 ```
 
 **说明**:
+
 - 优先使用 `pnpmfile.cjs` 处理兼容性问题，而非永久开启 `shamefully-hoist`
 - 每次添加 hook 需在文件中注释说明原因和预期移除时间
 - 定期检查是否可以移除 workaround (依赖升级后)
@@ -240,6 +244,7 @@ module.exports = {
 #### 1.1 升级 turbo.json
 
 **当前配置** (旧版 pipeline 格式):
+
 ```json
 {
   "$schema": "https://turbo.build/schema.json",
@@ -253,6 +258,7 @@ module.exports = {
 ```
 
 **升级后** (新版 tasks 格式):
+
 ```json
 {
   "$schema": "https://turbo.build/schema.json",
@@ -337,6 +343,7 @@ indent_style = tab
 #### 1.4 清理遗留空目录
 
 删除以下空目录:
+
 - `src/shared/`
 - `src/styles/`
 - `src/`
@@ -361,6 +368,7 @@ packages/tsconfig/
 ```
 
 **package.json**:
+
 ```json
 {
   "name": "@closetcutie/tsconfig",
@@ -377,6 +385,7 @@ packages/tsconfig/
 ```
 
 **base.json**:
+
 ```json
 {
   "$schema": "https://json.schemastore.org/tsconfig",
@@ -401,6 +410,7 @@ packages/tsconfig/
 ```
 
 **react.json**:
+
 ```json
 {
   "$schema": "https://json.schemastore.org/tsconfig",
@@ -414,6 +424,7 @@ packages/tsconfig/
 ```
 
 **vue.json**:
+
 ```json
 {
   "$schema": "https://json.schemastore.org/tsconfig",
@@ -427,6 +438,7 @@ packages/tsconfig/
 ```
 
 **node.json**:
+
 ```json
 {
   "$schema": "https://json.schemastore.org/tsconfig",
@@ -450,6 +462,7 @@ packages/eslint-config/
 ```
 
 **package.json**:
+
 ```json
 {
   "name": "@closetcutie/eslint-config",
@@ -482,13 +495,14 @@ packages/eslint-config/
 #### 2.3 ESLint 配置文件详情
 
 **packages/eslint-config/index.js** (基础配置):
+
 ```javascript
 // 基础 ESLint 配置 - TypeScript 项目通用
 module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
-    sourceType: 'module',
+    sourceType: 'module'
   },
   plugins: ['@typescript-eslint', 'import'],
   extends: [
@@ -496,7 +510,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',
-    'prettier', // 必须放最后，关闭与 Prettier 冲突的规则
+    'prettier' // 必须放最后，关闭与 Prettier 冲突的规则
   ],
   rules: {
     '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
@@ -507,20 +521,21 @@ module.exports = {
       {
         groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
         'newlines-between': 'always',
-        alphabetize: { order: 'asc' },
-      },
-    ],
+        alphabetize: { order: 'asc' }
+      }
+    ]
   },
   settings: {
     'import/resolver': {
       typescript: true,
-      node: true,
-    },
-  },
-};
+      node: true
+    }
+  }
+}
 ```
 
 **packages/eslint-config/react.js** (React 配置):
+
 ```javascript
 // React 专用 ESLint 配置
 module.exports = {
@@ -529,29 +544,30 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react/jsx-runtime', // React 17+ 新 JSX transform
     'plugin:react-hooks/recommended',
-    'prettier',
+    'prettier'
   ],
   plugins: ['react', 'react-hooks'],
   parserOptions: {
     ecmaFeatures: {
-      jsx: true,
-    },
+      jsx: true
+    }
   },
   settings: {
     react: {
-      version: 'detect',
-    },
+      version: 'detect'
+    }
   },
   rules: {
     'react/prop-types': 'off', // 使用 TypeScript 类型
     'react/react-in-jsx-scope': 'off', // React 17+ 不需要
     'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warn',
-  },
-};
+    'react-hooks/exhaustive-deps': 'warn'
+  }
+}
 ```
 
 **packages/eslint-config/vue.js** (Vue 配置):
+
 ```javascript
 // Vue 3 专用 ESLint 配置
 module.exports = {
@@ -559,7 +575,7 @@ module.exports = {
     './index.js',
     'plugin:vue/vue3-recommended',
     'plugin:vuejs-accessibility/recommended',
-    'prettier',
+    'prettier'
   ],
   plugins: ['vue', 'vuejs-accessibility'],
   parser: 'vue-eslint-parser',
@@ -567,16 +583,16 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     ecmaVersion: 'latest',
     sourceType: 'module',
-    extraFileExtensions: ['.vue'],
+    extraFileExtensions: ['.vue']
   },
   rules: {
     'vue/multi-word-component-names': 'off', // 允许单词组件名 (如 index.vue)
     'vue/no-v-html': 'warn',
     'vue/component-tags-order': ['error', { order: ['script', 'template', 'style'] }],
     'vue/define-macros-order': ['error', { order: ['defineProps', 'defineEmits'] }],
-    'vue/block-lang': ['error', { script: { lang: 'ts' } }],
-  },
-};
+    'vue/block-lang': ['error', { script: { lang: 'ts' } }]
+  }
+}
 ```
 
 ---
@@ -588,6 +604,7 @@ module.exports = {
 #### 3.1 根目录 package.json 更新
 
 新增 devDependencies:
+
 ```json
 {
   "devDependencies": {
@@ -601,6 +618,7 @@ module.exports = {
 ```
 
 新增 scripts:
+
 ```json
 {
   "scripts": {
@@ -644,12 +662,14 @@ pnpm-lock.yaml
 #### 3.4 配置 husky
 
 **.husky/pre-commit**:
+
 ```bash
 #!/bin/sh
 pnpm lint-staged
 ```
 
 **.husky/commit-msg**:
+
 ```bash
 #!/bin/sh
 # 可选: 添加 commitlint 检查
@@ -658,6 +678,7 @@ pnpm lint-staged
 #### 3.5 配置 lint-staged
 
 在 package.json 中添加:
+
 ```json
 {
   "lint-staged": {
@@ -671,19 +692,21 @@ pnpm lint-staged
 #### 3.6 各应用 ESLint 配置
 
 **apps/web/.eslintrc.js** (React 应用):
+
 ```javascript
 module.exports = {
   root: true,
   extends: ['@closetcutie/eslint-config/react'],
   parserOptions: {
     project: './tsconfig.json',
-    tsconfigRootDir: __dirname,
+    tsconfigRootDir: __dirname
   },
-  ignorePatterns: ['dist', 'node_modules', 'vite.config.ts'],
-};
+  ignorePatterns: ['dist', 'node_modules', 'vite.config.ts']
+}
 ```
 
 **apps/web/package.json** 添加脚本:
+
 ```json
 {
   "scripts": {
@@ -694,24 +717,26 @@ module.exports = {
 ```
 
 **apps/uni/.eslintrc.js** (Vue 应用):
+
 ```javascript
 module.exports = {
   root: true,
   extends: ['@closetcutie/eslint-config/vue'],
   parserOptions: {
     project: './tsconfig.json',
-    tsconfigRootDir: __dirname,
+    tsconfigRootDir: __dirname
   },
   ignorePatterns: ['dist', 'node_modules', '.output', 'vite.config.ts'],
   globals: {
     uni: 'readonly',
     wx: 'readonly',
-    plus: 'readonly',
-  },
-};
+    plus: 'readonly'
+  }
+}
 ```
 
 **apps/uni/package.json** 添加脚本:
+
 ```json
 {
   "scripts": {
@@ -730,6 +755,7 @@ module.exports = {
 #### 4.1 packages/ui 优化
 
 **更新 package.json**:
+
 ```json
 {
   "name": "@closetcutie/ui",
@@ -747,6 +773,7 @@ module.exports = {
 #### 4.2 packages/types 优化
 
 **更新 package.json**:
+
 ```json
 {
   "name": "@closetcutie/types",
@@ -771,6 +798,7 @@ module.exports = {
 #### 4.3 packages/services 优化
 
 **添加 tsconfig.json**:
+
 ```json
 {
   "extends": "@closetcutie/tsconfig/node.json",
@@ -785,6 +813,7 @@ module.exports = {
 ```
 
 **更新 package.json**:
+
 ```json
 {
   "name": "@closetcutie/services",
@@ -957,6 +986,7 @@ jobs:
 ```
 
 > 💡 **CI 优化说明**:
+>
 > - 使用 `pnpm fetch` + `pnpm install --offline` 预热缓存，加速安装
 > - Lint 任务使用 matrix 并行执行 web 和 uni，避免串行等待
 > - 格式检查作为独立 job 快速失败，节省后续资源
@@ -1012,6 +1042,7 @@ jobs:
 #### 7.1 更新 README.md
 
 补充以下章节:
+
 - 开发环境要求 (pnpm 9+)
 - 代码规范说明
 - 提交规范
@@ -1019,7 +1050,7 @@ jobs:
 
 #### 7.2 添加 CONTRIBUTING.md
 
-```markdown
+````markdown
 # 贡献指南
 
 ## 环境要求
@@ -1056,10 +1087,12 @@ pnpm lint
 pnpm format
 pnpm type-check
 ```
+````
 
 ## 提交规范
 
 使用 Conventional Commits 格式:
+
 - `feat: 新功能`
 - `fix: 修复 bug`
 - `docs: 文档更新`
@@ -1073,6 +1106,7 @@ pnpm type-check
 - 提交前会自动运行 lint 和 format
 - 确保 `pnpm type-check` 通过
 - 确保 `pnpm build` 成功
+
 ```
 
 ---
@@ -1080,39 +1114,41 @@ pnpm type-check
 ## 4. 最终目录结构
 
 ```
+
 closetcutie/
-├── .changeset/                 # [新增] 版本管理
-│   └── config.json
-├── .github/                    # [新增] CI/CD
-│   └── workflows/
-│       ├── ci.yml
-│       └── release.yml
-├── .husky/                     # [新增] Git hooks
-│   ├── pre-commit
-│   └── commit-msg
+├── .changeset/ # [新增] 版本管理
+│ └── config.json
+├── .github/ # [新增] CI/CD
+│ └── workflows/
+│ ├── ci.yml
+│ └── release.yml
+├── .husky/ # [新增] Git hooks
+│ ├── pre-commit
+│ └── commit-msg
 ├── apps/
-│   ├── api/                    # [不变] API 服务
-│   ├── uni/                    # [不变] Uni-App
-│   └── web/                    # [不变] React Web
+│ ├── api/ # [不变] API 服务
+│ ├── uni/ # [不变] Uni-App
+│ └── web/ # [不变] React Web
 ├── packages/
-│   ├── eslint-config/          # [新增] ESLint 配置包
-│   ├── tsconfig/               # [新增] TypeScript 配置包
-│   ├── types/                  # [优化] 类型定义
-│   ├── services/               # [优化] 业务服务
-│   └── ui/                     # [优化] UI 资源
-├── .editorconfig               # [新增]
-├── .eslintrc.js                # [新增]
-├── .npmrc                      # [新增] pnpm 配置
-├── .nvmrc                      # [新增]
-├── .prettierrc                 # [新增]
-├── .prettierignore             # [新增]
-├── CONTRIBUTING.md             # [新增]
-├── package.json                # [升级] 移除 workspaces，添加 packageManager
-├── pnpm-workspace.yaml         # [新增] pnpm 工作空间配置
-├── pnpmfile.cjs                # [可选] 依赖 hook 处理
-├── turbo.json                  # [升级]
-└── tsconfig.base.json          # [优化]
-```
+│ ├── eslint-config/ # [新增] ESLint 配置包
+│ ├── tsconfig/ # [新增] TypeScript 配置包
+│ ├── types/ # [优化] 类型定义
+│ ├── services/ # [优化] 业务服务
+│ └── ui/ # [优化] UI 资源
+├── .editorconfig # [新增]
+├── .eslintrc.js # [新增]
+├── .npmrc # [新增] pnpm 配置
+├── .nvmrc # [新增]
+├── .prettierrc # [新增]
+├── .prettierignore # [新增]
+├── CONTRIBUTING.md # [新增]
+├── package.json # [升级] 移除 workspaces，添加 packageManager
+├── pnpm-workspace.yaml # [新增] pnpm 工作空间配置
+├── pnpmfile.cjs # [可选] 依赖 hook 处理
+├── turbo.json # [升级]
+└── tsconfig.base.json # [优化]
+
+````
 
 ---
 
@@ -1235,16 +1271,16 @@ pnpm release                    # 发布
 
 # 清理
 pnpm clean                      # 清理 node_modules 和缓存
-```
+````
 
 ### C. pnpm vs npm 命令对照
 
-| 操作 | npm | pnpm |
-|------|-----|------|
-| 安装依赖 | `npm install` | `pnpm install` |
-| 添加依赖 | `npm install <pkg>` | `pnpm add <pkg>` |
-| 移除依赖 | `npm uninstall <pkg>` | `pnpm remove <pkg>` |
-| 运行脚本 | `npm run <script>` | `pnpm <script>` 或 `pnpm run <script>` |
-| 工作空间过滤 | `npm --prefix <path>` | `pnpm --filter <name>` |
-| 全局安装 | `npm install -g` | `pnpm add -g` |
-| 锁文件 | `package-lock.json` | `pnpm-lock.yaml` |
+| 操作         | npm                   | pnpm                                   |
+| ------------ | --------------------- | -------------------------------------- |
+| 安装依赖     | `npm install`         | `pnpm install`                         |
+| 添加依赖     | `npm install <pkg>`   | `pnpm add <pkg>`                       |
+| 移除依赖     | `npm uninstall <pkg>` | `pnpm remove <pkg>`                    |
+| 运行脚本     | `npm run <script>`    | `pnpm <script>` 或 `pnpm run <script>` |
+| 工作空间过滤 | `npm --prefix <path>` | `pnpm --filter <name>`                 |
+| 全局安装     | `npm install -g`      | `pnpm add -g`                          |
+| 锁文件       | `package-lock.json`   | `pnpm-lock.yaml`                       |

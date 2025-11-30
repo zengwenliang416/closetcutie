@@ -59,19 +59,22 @@ npm run dev --filter=closetcutie-uni
 ## 📱 Applications
 
 ### Web App (`apps/web`)
+
 - **Tech Stack**: React 18, Vite, React Router v6, Tailwind CSS
 - **Features**: Responsive design, AI clothing identification, local storage management.
 
 ### Mobile App (`apps/uni`)
+
 - **Tech Stack**: Uni-App (Vue 3), Pinia, TypeScript
 - **Targets**: iOS, Android, WeChat Mini Program, H5
-- **Features**: 
+- **Features**:
   - 📸 Camera integration for adding items
   - 🧠 AI-powered categorization
   - 🌊 Waterfall list UI
   - 💾 State persistence with Pinia
 
 ### API Service (`apps/api`)
+
 - **Tech Stack**: Node.js
 - **Role**: Proxies requests to Gemini AI API to avoid exposing keys on the client.
 

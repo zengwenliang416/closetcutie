@@ -1,7 +1,5 @@
 {
   "name": "ClosetCutie",
   "description": "A super cute, cartoon-style wardrobe manager. Organize your clothes into virtual boxes and wardrobes, and use AI to magically identify and tag your outfits!",
-  "requestFramePermissions": [
-    "camera"
-  ]
+  "requestFramePermissions": ["camera"]
 }

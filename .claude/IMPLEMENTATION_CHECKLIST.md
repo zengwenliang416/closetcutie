@@ -21,12 +21,14 @@
 ### 任务清单
 
 - [x] **0.1** 全局安装 pnpm - @codex 2025-11-28
+
   ```bash
   corepack enable
   corepack prepare pnpm@9.15.0 --activate
   ```
 
 - [x] **0.2** 创建 `pnpm-workspace.yaml` - @codex 2025-11-28
+
   ```yaml
   packages:
     - 'apps/*'
@@ -34,6 +36,7 @@
   ```
 
 - [x] **0.3** 创建 `.npmrc` - @codex 2025-11-28
+
   ```ini
   shamefully-hoist=true
   strict-peer-dependencies=false
@@ -63,11 +66,13 @@
   - [x] `packages/ui/package.json` name → `@closetcutie/ui` - @codex 2025-11-28
 
 - [x] **0.9** 清理旧依赖 - @codex 2025-11-28
+
   ```bash
   rm -rf node_modules **/node_modules package-lock.json
   ```
 
 - [x] **0.10** 安装依赖并验证 - @codex 2025-11-28
+
   ```bash
   pnpm install
   pnpm run dev  # 验证所有应用可正常启动
@@ -99,11 +104,13 @@
   - [x] 添加 `inputs` 配置优化缓存 - @codex 2025-11-28
 
 - [x] **1.2** 升级 turbo 版本 - @codex 2025-11-28
+
   ```bash
   pnpm add -Dw turbo@^2.3.0
   ```
 
 - [x] **1.3** 创建 `.nvmrc` - @codex 2025-11-28
+
   ```
   18
   ```
@@ -189,19 +196,19 @@
 
 #### 3.1 安装根目录工具
 
-- [ ] **3.1.1** 安装 ESLint
+- [x] **3.1.1** 安装 ESLint - @codex 2025-11-28
   ```bash
   pnpm add -Dw eslint@^8.57.0
   ```
-- [ ] **3.1.2** 安装 Prettier
+- [x] **3.1.2** 安装 Prettier - @codex 2025-11-28
   ```bash
   pnpm add -Dw prettier@^3.2.0
   ```
-- [ ] **3.1.3** 安装 husky
+- [x] **3.1.3** 安装 husky - @codex 2025-11-28
   ```bash
   pnpm add -Dw husky@^9.0.0
   ```
-- [ ] **3.1.4** 安装 lint-staged
+- [x] **3.1.4** 安装 lint-staged - @codex 2025-11-28
   ```bash
   pnpm add -Dw lint-staged@^15.2.0
   ```
@@ -292,11 +299,13 @@
 ### 任务清单
 
 - [ ] **5.1** 安装 Changesets
+
   ```bash
   pnpm add -Dw @changesets/cli@^2.27.0
   ```
 
 - [ ] **5.2** 初始化 Changesets
+
   ```bash
   pnpm changeset init
   ```
@@ -408,6 +417,6 @@
 
 ## 变更记录
 
-| 日期 | 变更内容 | 执行人 |
-|------|----------|--------|
+| 日期       | 变更内容     | 执行人 |
+| ---------- | ------------ | ------ |
 | 2025-01-28 | 创建工作计划 | Claude |
