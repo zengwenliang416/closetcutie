@@ -1,5 +1,5 @@
 import React from 'react'
-import { StorageUnit } from '@types'
+import { StorageUnit } from '@closetcutie/types'
 
 interface StorageCardProps {
   storage: StorageUnit

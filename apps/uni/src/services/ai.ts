@@ -1,4 +1,4 @@
-import { AIAnalysisResult, Category } from '@types'
+import { AIAnalysisResult, Category } from '@closetcutie/types'
 
 // 区分环境的基础 URL
 // H5 开发环境走代理，生产环境或小程序环境需要真实地址

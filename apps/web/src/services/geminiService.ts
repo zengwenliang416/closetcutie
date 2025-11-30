@@ -1,4 +1,4 @@
-import { AIAnalysisResult, Category } from '@types'
+import { AIAnalysisResult, Category } from '@closetcutie/types'
 
 export const identifyClothingItem = async (base64Image: string): Promise<AIAnalysisResult> => {
   try {

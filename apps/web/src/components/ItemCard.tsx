@@ -1,5 +1,5 @@
 import React from 'react'
-import { ClothingItem } from '@types'
+import { ClothingItem } from '@closetcutie/types'
 
 interface ItemCardProps {
   item: ClothingItem

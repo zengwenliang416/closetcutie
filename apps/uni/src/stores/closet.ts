@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
-import { ClothingItem, StorageUnit } from '@types'
+import { ClothingItem, StorageUnit } from '@closetcutie/types'
 import { INITIAL_ITEMS, INITIAL_STORAGES } from '@/constants'
 
 export const useClosetStore = defineStore(

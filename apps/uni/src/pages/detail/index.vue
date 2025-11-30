@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import { onLoad } from '@dcloudio/uni-app'
 import { useClosetStore } from '@/stores/closet'
-import { ClothingItem, StorageUnit } from '@types'
+import { ClothingItem, StorageUnit } from '@closetcutie/types'
 
 const store = useClosetStore()
 const item = ref<ClothingItem | null>(null)

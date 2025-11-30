@@ -5,7 +5,7 @@
   <slot />
 </template>
 
-<style src="../../packages/ui/tokens.css"></style>
+<style src="@closetcutie/ui/tokens.css"></style>
 <style>
 page {
   background-color: var(--bg-blush);

@@ -1,4 +1,4 @@
-import { StorageUnit, ClothingItem } from '@types'
+import { StorageUnit, ClothingItem } from '@closetcutie/types'
 
 export interface AppState {
   storages: StorageUnit[]

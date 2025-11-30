@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import { identifyClothingItem } from '@/services/ai'
 import { useClosetStore } from '@/stores/closet'
-import { Category } from '@types'
+import { Category } from '@closetcutie/types'
 import { storeToRefs } from 'pinia'
 
 const store = useClosetStore()

@@ -1,4 +1,4 @@
-import { StorageUnit, ClothingItem } from '@types'
+import { StorageUnit, ClothingItem } from '@closetcutie/types'
 import { StorageCard } from '../components/StorageCard'
 import { ItemCard } from '../components/ItemCard'
 import { PlusIcon } from '../components/Icons'

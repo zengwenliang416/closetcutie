@@ -1,4 +1,4 @@
-import { StorageUnit, Category, ClothingItem } from '@types'
+import { StorageUnit, Category, ClothingItem } from '@closetcutie/types'
 
 export const INITIAL_STORAGES: StorageUnit[] = [
   { id: 's1', name: 'My Big Wardrobe', type: 'closet', icon: '🚪', color: 'bg-blue-100' },

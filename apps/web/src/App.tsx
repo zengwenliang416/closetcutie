@@ -8,7 +8,7 @@ import {
   useLocation
 } from 'react-router-dom'
 import { INITIAL_STORAGES, INITIAL_ITEMS } from './constants'
-import { StorageUnit, ClothingItem } from '@types'
+import { StorageUnit, ClothingItem } from '@closetcutie/types'
 import { loadState, saveState } from '@/shared/storage'
 import { AddItemModal } from './components/AddItemModal'
 import { SearchIcon, BackIcon, TrashIcon } from './components/Icons'
