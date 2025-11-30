@@ -10,27 +10,27 @@ export enum Category {
 }
 
 export interface StorageUnit {
-  id: string;
-  name: string;
-  type: 'closet' | 'box' | 'drawer' | 'rack';
-  icon: string;
-  color: string;
+  id: string
+  name: string
+  type: 'closet' | 'box' | 'drawer' | 'rack'
+  icon: string
+  color: string
 }
 
 export interface ClothingItem {
-  id: string;
-  name: string;
-  storageId: string;
-  category: Category;
-  imageUrl: string;
-  tags: string[];
-  color: string;
-  createdAt: number;
+  id: string
+  name: string
+  storageId: string
+  category: Category
+  imageUrl: string
+  tags: string[]
+  color: string
+  createdAt: number
 }
 
 export interface AIAnalysisResult {
-  name: string;
-  category: Category;
-  color: string;
-  tags: string[];
+  name: string
+  category: Category
+  color: string
+  tags: string[]
 }
