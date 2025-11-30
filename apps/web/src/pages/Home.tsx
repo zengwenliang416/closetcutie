@@ -1,7 +1,8 @@
 import { StorageUnit, ClothingItem } from '@closetcutie/types'
-import { StorageCard } from '../components/StorageCard'
-import { ItemCard } from '../components/ItemCard'
+
 import { PlusIcon } from '../components/Icons'
+import { ItemCard } from '../components/ItemCard'
+import { StorageCard } from '../components/StorageCard'
 
 interface HomeProps {
   storages: StorageUnit[]

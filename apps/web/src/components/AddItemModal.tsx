@@ -1,6 +1,8 @@
-import React, { useState, useRef } from 'react'
 import { StorageUnit, Category, ClothingItem } from '@closetcutie/types'
+import React, { useState, useRef } from 'react'
+
 import { identifyClothingItem } from '../services/geminiService'
+
 import { CameraIcon, SparklesIcon } from './Icons'
 
 interface AddItemModalProps {

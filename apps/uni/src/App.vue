@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <page-meta backgroundTextStyle="light" />
+  <page-meta background-text-style="light" />
   <slot />
 </template>
 

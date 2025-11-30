@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import { onLoad } from '@dcloudio/uni-app'
-import { useClosetStore } from '@/stores/closet'
 import { ClothingItem, StorageUnit } from '@closetcutie/types'
+import { onLoad } from '@dcloudio/uni-app'
+import { ref } from 'vue'
+
+import { useClosetStore } from '@/stores/closet'
 
 const store = useClosetStore()
 const item = ref<ClothingItem | null>(null)

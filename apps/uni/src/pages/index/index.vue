@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-import { useClosetStore } from '@/stores/closet'
 import { storeToRefs } from 'pinia'
+import { ref, computed } from 'vue'
+
+import { useClosetStore } from '@/stores/closet'
 
 const store = useClosetStore()
 const { storages } = storeToRefs(store)

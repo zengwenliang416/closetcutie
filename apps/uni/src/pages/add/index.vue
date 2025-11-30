@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import { identifyClothingItem } from '@/services/ai'
-import { useClosetStore } from '@/stores/closet'
 import { Category } from '@closetcutie/types'
 import { storeToRefs } from 'pinia'
+import { ref } from 'vue'
+
+import { identifyClothingItem } from '@/services/ai'
+import { useClosetStore } from '@/stores/closet'
 
 const store = useClosetStore()
 const { storages } = storeToRefs(store)

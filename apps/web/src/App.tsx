@@ -1,3 +1,4 @@
+import { StorageUnit, ClothingItem } from '@closetcutie/types'
 import { useState, useEffect } from 'react'
 import {
   HashRouter as Router,
@@ -7,14 +8,15 @@ import {
   useParams,
   useLocation
 } from 'react-router-dom'
-import { INITIAL_STORAGES, INITIAL_ITEMS } from './constants'
-import { StorageUnit, ClothingItem } from '@closetcutie/types'
-import { loadState, saveState } from '@/shared/storage'
+
 import { AddItemModal } from './components/AddItemModal'
 import { SearchIcon, BackIcon, TrashIcon } from './components/Icons'
+import { PlusIcon } from './components/Icons'
+import { INITIAL_STORAGES, INITIAL_ITEMS } from './constants'
 import { Home } from './pages/Home'
 import { StorageDetail } from './pages/StorageDetail'
-import { PlusIcon } from './components/Icons'
+
+import { loadState, saveState } from '@/shared/storage'
 
 function AppContent() {
   const initial = loadState()
