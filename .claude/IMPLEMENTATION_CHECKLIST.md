@@ -334,19 +334,19 @@
 
 ### 任务清单
 
-- [ ] **6.1** 创建 `.github/workflows/` 目录
+- [x] **6.1** 创建 `.github/workflows/` 目录 - @codex 2025-11-30
 
-- [ ] **6.2** 创建 `.github/workflows/ci.yml`
-  - [ ] format job
-  - [ ] lint job (matrix: web, uni)
-  - [ ] build job
+- [x] **6.2** 创建 `.github/workflows/ci.yml` - @codex 2025-11-30
+  - [x] format job - @codex 2025-11-30
+  - [x] lint job (matrix: web, uni) - @codex 2025-11-30
+  - [x] build job - @codex 2025-11-30
 
 - [ ] **6.3** (可选) 创建 `.github/workflows/release.yml`
   - [ ] Changesets action 配置
 
-- [ ] **6.4** 配置 GitHub Secrets (如需要)
-  - [ ] `TURBO_TOKEN` (可选，用于 Turbo Remote Cache)
-  - [ ] `TURBO_TEAM` (可选)
+- [-] **6.4** 配置 GitHub Secrets (如需要)
+  - [-] `TURBO_TOKEN` (当前使用本地缓存，暂不需要)
+  - [-] `TURBO_TEAM`
 
 ### 阶段 6 验收标准
 
@@ -363,25 +363,25 @@
 
 ### 任务清单
 
-- [ ] **7.1** 更新 `README.md`
-  - [ ] 更新环境要求 (pnpm 9+)
-  - [ ] 更新安装命令
-  - [ ] 添加代码规范说明
-  - [ ] 添加提交规范
+- [x] **7.1** 更新 `README.md` - @codex 2025-11-30
+  - [x] 更新环境要求 (pnpm 9+) - @codex 2025-11-30
+  - [x] 更新安装命令 - @codex 2025-11-30
+  - [x] 添加代码规范说明 - @codex 2025-11-30
+  - [x] 添加提交规范 - @codex 2025-11-30
 
-- [ ] **7.2** 创建 `CONTRIBUTING.md`
-  - [ ] 开发流程
-  - [ ] 常用命令
-  - [ ] 提交规范
-  - [ ] 代码规范
+- [x] **7.2** 创建 `CONTRIBUTING.md` - @codex 2025-11-30
+  - [x] 开发流程 - @codex 2025-11-30
+  - [x] 常用命令 - @codex 2025-11-30
+  - [x] 提交规范 - @codex 2025-11-30
+  - [x] 代码规范 - @codex 2025-11-30
 
 - [ ] **7.3** (可选) 清理/归档此改造文档
   - [ ] 移动 `.claude/MONOREPO_UPGRADE_PLAN.md` 到 `docs/` 或删除
 
 ### 阶段 7 验收标准
 
-- [ ] README.md 更新完成
-- [ ] CONTRIBUTING.md 创建完成
+- [x] README.md 更新完成 - @codex 2025-11-30
+- [x] CONTRIBUTING.md 创建完成 - @codex 2025-11-30
 - [ ] 新开发者可根据文档完成环境搭建
 
 ---

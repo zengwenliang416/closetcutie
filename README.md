@@ -4,7 +4,7 @@ A smart closet management application powered by AI, built as a modern Monorepo.
 
 ## 🏗 Project Structure
 
-This project uses [Turborepo](https://turbo.build/) and [npm workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces) to manage multiple applications and shared packages.
+This project uses [Turborepo](https://turbo.build/) and [pnpm workspaces](https://pnpm.io/workspaces) to manage multiple applications and shared packages.
 
 ```
 closetcutie/
@@ -25,14 +25,14 @@ closetcutie/
 
 ### Prerequisites
 
-- Node.js (v18+)
-- npm (v9+)
+- Node.js 18+ (遵循 `.nvmrc`)
+- pnpm 9+（推荐 `corepack enable` 自动管理）
 
 ### Installation
 
 ```bash
 # Install dependencies for all workspaces
-npm install
+pnpm install
 ```
 
 ### Environment Setup
@@ -49,11 +49,12 @@ You can run all applications simultaneously using Turbo:
 
 ```bash
 # Run all apps (web, uni, api) in parallel
-npm run dev
+pnpm dev
 
 # Run specific app
-npm run dev --filter=closetcutie-web
-npm run dev --filter=closetcutie-uni
+pnpm --filter closetcutie-web dev
+pnpm --filter closetcutie-uni dev:h5
+pnpm --filter closetcutie-api start
 ```
 
 ## 📱 Applications
@@ -84,12 +85,41 @@ npm run dev --filter=closetcutie-uni
 - **@services**: Shared API clients and AI logic.
 - **@ui**: Shared design tokens and icons.
 
-## 🛠 Building
+## 🛠 Building & Quality
 
 ```bash
 # Build all applications
-npm run build
+pnpm build
+
+# Type checking via Turborepo pipelines
+pnpm type-check
+
+# Run lint for every app (web + uni)
+pnpm lint
+
+# Auto-fix lint issues
+pnpm lint:fix
+
+# Format codebase with Prettier
+pnpm format
+pnpm format:check
 ```
+
+### Code Style & Commits
+
+- ESLint / Prettier 配置集中在共享包，所有提交都会触发 Husky 的 `lint-staged` 与 Conventional Commits 校验。
+- 提交信息需符合 `type(scope): description`（如 `feat(web): add closet grid`）。详见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+
+### Recommended workflow
+
+1. `pnpm install`
+2. `pnpm dev`（或针对性 filter 命令）
+3. 变更前运行 `pnpm lint` + `pnpm format:check`
+4. 提交会自动运行 `lint-staged`，无需手动执行。
+
+## 🤝 Contributing
+
+欢迎通过 issue / PR 参与贡献，请先阅读 [CONTRIBUTING.md](CONTRIBUTING.md) 了解分支策略、命令合集与提交规范。
 
 ## 📝 License
 
