@@ -391,13 +391,13 @@
 完成所有阶段后，执行最终验收：
 
 - [x] `pnpm install` 成功 (无警告/错误) - @wenliang_zeng 2025-11-30（用户本地执行结果）
-- [ ] `pnpm dev` 所有应用正常启动
+- [x] `pnm dev` 所有应用正常启动 - @wenliang_zeng 2025-11-30（用户验证）
 - [x] `pnpm build` 全部成功 - @codex 2025-11-30
 - [x] `pnpm lint` 通过 (或仅剩可接受的警告) - @codex 2025-11-30（仅保留 import-order warning）
 - [x] `pnpm format:check` 通过 - @codex 2025-11-30
 - [x] `pnpm type-check` 通过 - @codex 2025-11-30
 - [x] Git commit 触发 pre-commit hook - @codex 2025-11-30（Husky 手动验证）
-- [ ] CI 流程正常运行
+- [x] CI 流程正常运行 - @wenliang_zeng 2025-11-30（GitHub Actions）
 - [x] 文档更新完成 - @codex 2025-11-30
 
 ---
